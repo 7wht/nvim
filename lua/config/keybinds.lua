@@ -9,7 +9,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "N", "Nzz")
 
-vim.keymap.set("n", "<leader>t", vim.cmd.term)
 vim.keymap.set("n", "<leader>l", vim.cmd.LSPToggle)
 
 vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle)
@@ -101,4 +100,9 @@ end
 
 vim.keymap.set({ "n", "t" }, "<C-/>", toggle_terminal, { desc = "Toggle Terminal Split" })
 
+vim.keymap.set("n", "<leader>t", function()
+  toggle_terminal()
+  toggle_terminal()
+  vim.cmd("b bash")
+end)
 
