@@ -1,5 +1,6 @@
 require("plugins.tokyonight")
 require("plugins.bufferline")
+require("plugins.undotree")
 require("plugins.oil")
 require("plugins.nvim-tree")
 require("plugins.plenary")
