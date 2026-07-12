@@ -17,10 +17,10 @@ vim.api.nvim_create_user_command("LSPToggle", function ()
     })
 
     vim.lsp.enable({
-      "lua_ls",
-      "rust_analyzer",
       "clangd",
       "ty",
+      "lua_ls",
+      "rust_analyzer",
     })
   else
     local active_clients = vim.lsp.get_clients()
@@ -32,6 +32,4 @@ vim.api.nvim_create_user_command("LSPToggle", function ()
   end
 end, {})
 
-
--- sudo pacman -S --needed clang ty rust-analyzer lua-language-server
 
