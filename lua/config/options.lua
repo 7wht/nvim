@@ -37,12 +37,13 @@ vim.opt.ruler = true
 vim.opt.rulerformat = "%= %p%%"
 
 -- Clipboard and mouse
--- vim.opt.clipboard = "unnamedplus"
+--vim.opt.clipboard = "unnamedplus"
 vim.opt.mouse = ""
 
 -- Undo, files, and update behavior
 vim.opt.updatetime = 250
-vim.opt.undofile = false
+vim.opt.undofile = true
+vim.opt.undolevels = 1000000
 vim.opt.swapfile = false
 vim.opt.backup = false
 
