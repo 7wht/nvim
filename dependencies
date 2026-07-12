@@ -1,2 +1,1 @@
-ripgrep fd
-clang ty rust-analyzer lua-language-server
+ripgrep fd        clang ty rust-analyzer lua-language-server
