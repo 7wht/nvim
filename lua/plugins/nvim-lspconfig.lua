@@ -32,8 +32,6 @@ vim.api.nvim_create_user_command("LSPToggle", function ()
   end
 end, {})
 
-vim.keymap.set("n", "<leader>l", vim.cmd.LSPToggle)
-
 
 -- sudo pacman -S --needed clang ty rust-analyzer lua-language-server
 
