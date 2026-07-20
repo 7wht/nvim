@@ -29,6 +29,7 @@ vim.keymap.set("n", "<leader>h", vim.cmd.Oil)
 vim.keymap.set("n", "L", ":bnext<CR>")
 vim.keymap.set("n", "H", ":bprev<CR>")
 vim.keymap.set("n", "<leader>bd", ":bd!<CR>")
+vim.keymap.set("n", "<leader>bad", ":silent! %bd<CR>")
 
 -- move between split windows
 vim.keymap.set('n', '<C-h>', '<C-w>h')
@@ -46,7 +47,7 @@ vim.api.nvim_create_user_command('Wq', 'wq', {})
 vim.api.nvim_create_user_command('WQ', 'wq', {})
 vim.api.nvim_create_user_command('Q', 'q', {})
 
-vim.keymap.set('t', '<M-a>', '<C-\\><C-n>')
+vim.keymap.set('t', '<M-z>', '<C-\\><C-n>')
 
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]], { desc = "Copy to system clipboard" })
 vim.keymap.set({"n", "v"}, "<leader>d", "\"_d")
@@ -89,6 +90,7 @@ local function toggle_terminal()
   else
     -- Otherwise, open a fresh terminal and grab its buffer ID
     vim.cmd("term")
+    vim.opt.ft = "Terminal"
     term_buf = vim.api.nvim_get_current_buf()
   end
 
