@@ -21,6 +21,7 @@ vim.opt.linebreak = false
 vim.opt.breakindent = true
 
 -- Cursor context and movement
+vim.opt.guicursor = "i:block"
 vim.opt.sidescrolloff = 8
 vim.opt.scrolloff = 8
 vim.opt.cursorline = true
