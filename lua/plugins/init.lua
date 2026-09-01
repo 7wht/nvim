@@ -1,4 +1,5 @@
 require("plugins.tokyonight")
+require("plugins.gruber-darker")
 require("plugins.bufferline")
 require("plugins.lualine")
 require("plugins.undotree")
