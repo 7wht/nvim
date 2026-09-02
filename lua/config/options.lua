@@ -51,7 +51,7 @@ vim.opt.backup = false
 -- Color and terminal UI
 vim.opt.termguicolors = true
 vim.opt.laststatus = 0
-vim.opt.cmdheight= 0
+vim.opt.cmdheight= 1
 
 -- Completion and command-line comfort
 vim.opt.completeopt = { "menu", "menuone", "longest" }
