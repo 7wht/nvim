@@ -23,7 +23,11 @@ vim.keymap.set("n", "<leader>E", function()
 end)
 
 vim.keymap.set("n", "<leader>cd", function()
-  local p = vim.fn.input("Nvim-Tree root dir: ", vim.fn.getcwd() .. "/", "dir")
+  local b = require("oil").get_current_dir()
+  if !b then
+    b = vim.fn.getcwd()
+  end
+  local p = vim.fn.input("Nvim-Tree root dir: ", b .. "", "dir")
   if p and p ~= "" then
     vim.cmd("cd " .. vim.fn.fnameescape(p))
     vim.cmd("NvimTreeToggle")
