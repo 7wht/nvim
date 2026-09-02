@@ -7,7 +7,7 @@ podman run --rm -it archlinux bash -c "pacman -Sy --needed --noconfirm git nvim;
 ```
 # install:
 ```
-  pacman -S --needed git neovim
+  sudo pacman -S --needed git neovim;
   git clone --depth=1 https://github.com/7wht/nvim ~/.config/nvim;
-  pacman -S --needed $(cat ~/.config/nvim/dependencies);
+  sudo pacman -S --needed $(cat ~/.config/nvim/dependencies);
 ```
