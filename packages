@@ -1,0 +1,8 @@
+neovim
+ripgrep
+fd
+tree-sitter-cli
+clang
+ty
+rust-analyzer
+lua-language-server

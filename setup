@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+function main(){
+  export HOME="$1"
+  export USER="$2"
+  export CWD="$3"
+
+  export packages="$(cat $CWD/packages)"
+  pacman -S --needed --noconfirm $packages
+
+  if [[ ! -d "$HOME/.config" ]]; then
+    mkdir "$HOME/.config"
+    chown -R "$USER": "$HOME/.config"
+  fi
+
+  if [[ -d "$HOME/.config/nvim" ]]; then
+    rm -rf "$HOME/.config/nvim"
+  fi
+
+  cp -r "$CWD/nvim" "$HOME/.config"
+  chown -R "$USER": "$HOME/.config/nvim"
+}
+
+if command -v sudo >/dev/null 2>&1; then
+  sudo bash -c "$(declare -f main);
+  main \"$HOME\" \"$USER\" \"$(dirname $(realpath $0))\"" || exit 1
+else
+  echo "switching to root..."
+  su - root -s /usr/bin/bash -c "$(declare -f main);
+  main \"$HOME\" \"$USER\" \"$(dirname $(realpath $0))\"" || exit 1
+fi
